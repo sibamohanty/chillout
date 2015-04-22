@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Chiller Analytics">
+    <meta name="author" content="Siba Mohanty">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Chiiler Plant </title>
+
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text:white;
+  background-color : "#261D21";
+}
+
+.chart rect {
+  fill: green;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+</style>
+
+
+<!-- Bootstrap core CSS -->
+    <link href="static/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="static/css/dashboard.css" rel="stylesheet">
+    <link href="static/css/d3_elements.css" rel="stylesheet">
+    <link rel="Stylesheet" href="static/css/custombindings.css">
+   
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/start/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="static/js/knockout-3.3.0.js"></script>
+    <script src="static/js/initialize.js"></script>
+    <!--script src="static/js/ko_app.js"></script-->
+
+<body style="background-color:black">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" >
+          <div class="btn-group btn-group-xs navbar-right" style="color: #1f1f14" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" style="background-color:#1f1f14;color:white;">Overview</button>
+            <button type="button" class="btn btn-default"style="background-color:#1f1f14;color:white;">Analytics</button>
+            <button type="button" class="btn btn-default"style="background-color:#1f1f14;color:white;">Alerts</button>
+            <button type="button" class="btn btn-default"style="background-color:#1f1f14;color:white;">SystemView</button>
+            <button type="button" class="btn btn-default"style="background-color:#1f1f14;color:white;">Settings</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+<div class="col-sm-12 col-md-10  main">
+    <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <h4>Candle Stick Chart</h4>
+	      <div id="chart_div" style="width: 500px; height: 200px; "></div>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <h4>Tree Map</h4>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+	      <h4>Bar Chart</h4>
+              <svg class="chart"></svg>
+
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <h4>Pie Chart</h4>
+            </div>
+
+	    <!-- This is test UI segment to check out Knockout-->
+    </div>
+
+    </div>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(initialize);
+    </script>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+	  <div class="date-panel"></div>
+    
+        </div>
+
+    </nav>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+    //var date_viz= d3.selectAll(".date-panel")
+    //    .append("svg")
+    var w_width= $(document).width(),
+        h = 40;
+    console.log(w_width);
+</script>
+    <!--div class="bottom-date-bar"></div -->
+<script src="static/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+
+</body>
+
+<html>

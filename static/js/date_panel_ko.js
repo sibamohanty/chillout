@@ -17,8 +17,6 @@
 	    console.log("The current month is "+ month);
 	    self.year = year || dt.getYear();
             return new Date(self.year, self.month, 0).getDate();
-
-
 	},
 	self.init = function (){
             self.noofdays= self.daysInMonth();
@@ -33,7 +31,9 @@
 	self.selectDate = function (day, e){
 	    self.showData(self.year,self.month,day.day);
 	    console.log(e);
+	    $(self.selected).css('background-color',"transparent");
 	    $(e.target).css('background-color',"yellow");
+	    self.selected = e.target;
 	},
 	self.randomEfficiencyForTheDay = function (){
 	   return Math.random(.1);
@@ -56,9 +56,16 @@
 	    console.log(d.cop);
 	},
 	self.logMouseOut = function (d,e){
-	   $(e.target).css("background-color", "transparent");
+	    if (e.target == self.selected){
+	        $(e.target).css("background-color", "yellow");
 
-	}
+	    }
+	    else {
+	         $(e.target).css("background-color", "transparent");
+
+	    }
+
+	},
         this.init();
     }
     ko.applyBindings(

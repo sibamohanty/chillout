@@ -103,3 +103,15 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.date-span{
+  width:20px;
+  height :70px;
+  padding : 10px;
+  border-radius: 2px;
+  border: 2px solid #8AC007;
+}
+
+.date-panel{
+   height : 80 px;
+}
